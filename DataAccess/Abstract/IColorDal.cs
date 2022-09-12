@@ -2,11 +2,12 @@
 
 
 
+using Core.DataAccess;
 using Entities.Concrete;
 
 namespace DataAccess.Abstract
 {
-    public interface IColorDal : IEntityRepositoryDal<Color>
+    public interface IColorDal : IEntityRepository<Color>
     {
     }
 }
