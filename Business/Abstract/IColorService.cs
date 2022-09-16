@@ -7,7 +7,13 @@ namespace Business.Abstract
 {
     public interface IColorService
     {
-        List<Car> GetCarByColorId(int id);
+        List<Color> GetAll();
+        Color GetById(int colorId);
+        
+
+        void Add(Color color);
+        void Delete(Color color);   
+        void Update(Color color);
 
 
     }

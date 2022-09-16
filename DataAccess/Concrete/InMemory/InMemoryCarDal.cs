@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +17,12 @@ namespace DataAccess.Concrete.InMemory
         public InMemoryCarDal()
         {
             _cars = new List<Car> {
-                new Car{Id=1,BrandId=1,ColorId=1,ModelYear=2022,DailyPrice=50000,Description= "Motorlu ve Tekerlekli Kara Ulaşım Aracı"},
-                new Car{Id=2,BrandId=2,ColorId=3,ModelYear=2022,DailyPrice=150000,Description="Motorlu ve Tekerlekli Kara Ulaşım Aracı"},
-                new Car{Id=3,BrandId=3,ColorId=4,ModelYear=2022,DailyPrice=100000,Description="Motorlu ve Tekerlekli Kara Ulaşım Aracı" },
-                new Car{Id=4,BrandId=2,ColorId=2,ModelYear=2022,DailyPrice=30000,Description="Motorlu ve Tekerlekli Kara Ulaşım Aracı"}
+                new Car{Id=1,BrandId=1,ColorId=1,
+                    ModelYear=2022,DailyPrice=50000,Description= "Motorlu ve Tekerlekli Kara Ulaşım Aracı"},
+                new Car{Id=2,BrandId=2,ColorId=2,
+                    ModelYear=2022,DailyPrice=150000,Description="Motorlu ve Tekerlekli Kara Ulaşım Aracı"},
+                new Car{Id=3,BrandId=3,ColorId = 3, ModelYear=2022,DailyPrice=100000,Description="Motorlu ve Tekerlekli Kara Ulaşım Aracı" },
+                new Car{Id=4,BrandId=2,ColorId = 4, ModelYear=2022,DailyPrice=30000,Description="Motorlu ve Tekerlekli Kara Ulaşım Aracı"}
 
             };
         }
@@ -30,6 +33,11 @@ namespace DataAccess.Concrete.InMemory
         {
 
             _cars.Add(car);
+        }
+
+        public List<CarDetailDto> CarDetails()
+        {
+            throw new NotImplementedException();
         }
 
         public void Delete(Car car)
@@ -66,6 +74,11 @@ namespace DataAccess.Concrete.InMemory
         public List<Car> GetById(int Id)
         {
             return _cars.Where(p => p.Equals(Id)).ToList();
+        }
+
+        public List<CarDetailDto> GetCarDetails()
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Car car)
