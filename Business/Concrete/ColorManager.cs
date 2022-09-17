@@ -17,29 +17,23 @@ namespace Business.Concrete
         }
         public void Add(Color color)
         {
-            throw new NotImplementedException();
+            _colorDal.Add(color);
         }
-
         public void Delete(Color color)
         {
-            throw new NotImplementedException();
+            _colorDal.Delete(color);
         }
-
         public List<Color> GetAll()
         {
             return _colorDal.GetAll();
         }
-
         public Color GetById(int colorId)
         {
-            throw new NotImplementedException();
-        }
-
-       
-
+            return _colorDal.Get(c=>c.Id == colorId);   
+        }      
         public void Update(Color color)
         {
-            throw new NotImplementedException();
+            _colorDal.Update(color);
         }
     }
 }

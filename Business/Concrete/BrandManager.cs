@@ -17,29 +17,23 @@ namespace Business.Concrete
         }
         public void Add(Brand brand)
         {
-            throw new NotImplementedException();
+            _brandDal.Add(brand);
         }
-
         public void Delete(Brand brand)
         {
-            throw new NotImplementedException();
+            _brandDal.Delete(brand);
         }
-
         public List<Brand> GetAll()
         {
             return _brandDal.GetAll();
         }
-
         public Brand GetById(int brandId)
         {
-            throw new NotImplementedException();
-        }
-
-        
-
+            return _brandDal.Get(b=>b.Id == brandId);
+        }       
         public void Update(Brand brand)
         {
-            throw new NotImplementedException();
+            _brandDal.Update(brand);
         }
     }
 }

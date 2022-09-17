@@ -14,6 +14,21 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            //ColorDelete();
+            //ColorUpdate();
+            //ColorAdd();
+            //ColorGetAll();
+            //GetColorById();
+            //BrandDelete();
+            //BrandUpdate();
+            //BrandAdd();
+            //BrandGetAll();
+            //GetBrandById();
+            //GetCarsByColorId();
+            //GetBrandById();
+            //GetCarsByBrandId();
+            //GetCarsByColorId();
+            ////CarGetById();
             //CarGetAll();
             //CarDelete();
             //CarUpdate();
@@ -31,7 +46,7 @@ namespace ConsoleUI
                 Console.WriteLine(brand.Id);
             }
         }
-        private static void ModelTest()
+        private static void ColorTest()
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
             var colors = colorManager.GetAll();
@@ -54,21 +69,21 @@ namespace ConsoleUI
         private static void CarAdd()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            var car = new Car { BrandId = 3, ColorId = 2, DailyPrice = 500, Description = "Tekerlekli Kara Ulaşım Aracı", ModelYear = 2009, Name = "Mersedes",UnitsInStock=5 };
+            var car = new Car { BrandId = 3, ColorId = 2, DailyPrice = 500, Description = "Tekerlekli Kara Ulaşım Aracı", ModelYear = 2009, Name = "Mercedes", UnitsInStock = 5 };
             carManager.Add(car);
             Console.WriteLine("İşlem Başarılı");
         }
         private static void CarUpdate()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            var car = new Car { BrandId = 3, Id=1003,ColorId = 2, DailyPrice = 500, Description = "Tekerlekli Kara Ulaşım Aracı", ModelYear = 2009, Name = "Mercedes", UnitsInStock = 5 };
+            var car = new Car { BrandId = 3, Id = 1003, ColorId = 2, DailyPrice = 500, Description = "Tekerlekli Kara Ulaşım Aracı", ModelYear = 2009, Name = "Mercedes", UnitsInStock = 5 };
             carManager.Update(car);
             Console.WriteLine("İşlem Başarılı");
         }
         private static void CarDelete()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            var car = new Car { Id = 2}; 
+            var car = new Car { Id = 2 };
             carManager.Delete(car);
             Console.WriteLine("İşlem Başarılı");
         }
@@ -106,10 +121,77 @@ namespace ConsoleUI
                 Console.WriteLine(car.Name);
             }
         }
-
-
-
-
-
+        private static void GetBrandById()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            var brand = brandManager.GetById(2);
+            Console.WriteLine(brand.Name);
+        }
+        private static void BrandGetAll()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            var brands = brandManager.GetAll();
+            foreach (var brand in brands)
+            {
+                Console.WriteLine(brand.Name);
+            }
+        }
+        private static void BrandAdd()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            var brand = new Brand { Name = "Mercedes" };
+            brandManager.Add(brand);
+            Console.WriteLine("İşlem Başarılı");
+        }
+        private static void BrandUpdate()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            var brand = new Brand { Id = 2, Name = "Fiat" };
+            brandManager.Update(brand);
+            Console.WriteLine("İşlem Başarılı");
+        }
+        private static void BrandDelete()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            var brand = new Brand { Id = 3 };
+            brandManager.Delete(brand);
+            Console.WriteLine("İşlem Başarılı");
+        }
+        private static void GetColorById()
+        {
+            ColorManager colorManager = new ColorManager(new EfColorDal());
+            var color = colorManager.GetById(2);
+            Console.WriteLine(color.Name);
+        }
+        private static void ColorGetAll()
+        {
+            ColorManager colorManager = new ColorManager(new EfColorDal());
+            var colors = colorManager.GetAll();
+            foreach (var color in colors)
+            {
+                Console.WriteLine(color.Name);
+            }
+        }
+        private static void ColorAdd()
+        {
+            ColorManager colorManager = new ColorManager(new EfColorDal());
+            var color = new Color { Name = "Kırmızı" };
+            colorManager.Add(color);
+            Console.WriteLine("İşlemBaşarılı");
+        }
+        private static void ColorUpdate()
+        {
+            ColorManager colormanager = new ColorManager(new EfColorDal());
+            var color = new Color { Id = 1, Name = "Beyaz" };
+            colormanager.Update(color);
+            Console.WriteLine("İşlem Başarılı");
+        }
+        private static void ColorDelete()
+        {
+            ColorManager colormanager = new ColorManager(new EfColorDal());
+            var color = new Color { Id = 2 };
+            colormanager.Delete(color);
+            Console.WriteLine("İşlem Başarılı");
+        }
     }
 }
