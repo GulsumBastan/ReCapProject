@@ -29,7 +29,7 @@ namespace Business.Concrete
         }
         public IResult Update(Brand brand)
         {
-            return new SuccessResult(Messages.BrandUpdate);
+            return new SuccessResult(Messages.BrandUpdated);
         }
         public IDataResult<List<Brand>> GetAll()
         {

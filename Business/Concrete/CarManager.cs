@@ -21,7 +21,7 @@ namespace Business.Concrete
         }
         public IResult Add(Car car)
         {
-            if (car.Name.Length >= 2 & car.DailyPrice > 0)
+            if (car.Name.Length <= 2 & car.DailyPrice <= 0)
             {
                 return new ErrorResult(Messages.CarNameInvalid);   
             }
@@ -46,7 +46,7 @@ namespace Business.Concrete
         }      
         public IDataResult<Car> GetById(int Id)
         {
-            return new SuccessDataResult<Car>(_carDal.Get(p => Id == Id));           
+            return new SuccessDataResult<Car>(_carDal.Get(p => p.Id == Id));           
         }
         public IDataResult <List<CarDetailDto>> GetCarDetails()
         {
@@ -60,7 +60,7 @@ namespace Business.Concrete
         public IDataResult<List<Car>> GetCarsByColorId(int colorId)
         {
 
-            return new ErrorDataResult<List<Car>>(_carDal.GetAll(c=>c.ColorId == colorId));
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c=>c.ColorId == colorId));
 
         }       
     }
