@@ -38,10 +38,10 @@ namespace Business.Concrete
         }
         public IDataResult <List<Car>> GetAll()
         {
-            if (DateTime.Now.Hour == 20)
-            {
-                return new ErrorDataResult<List<Car>>(Messages.MeintenanceTime);
-            }
+            //if (DateTime.Now.Hour == 20)
+            //{
+            //    return new ErrorDataResult<List<Car>>(Messages.MeintenanceTime);
+            //}
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(), Messages.CarsListed);
         }      
         public IDataResult<Car> GetById(int Id)

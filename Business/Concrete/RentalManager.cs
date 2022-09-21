@@ -22,9 +22,9 @@ namespace Business.Concrete
         public IResult Add(Rental rental)
         {
             var isRental = _rentalDal.Get(c => c.CarId == rental.CarId && c.ReturnDate == null);
-            if(isRental!=null)
+            if (isRental != null)
             {
-                return new ErrorDataResult();
+                return new ErrorResult(Messages.RentalNotAdded);
             }
             _rentalDal.Add(rental);
             return new SuccessResult(Messages.RentalAdded);

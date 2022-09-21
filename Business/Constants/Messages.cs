@@ -16,13 +16,10 @@ namespace Business.Constants
         public static string BrandDeleted = "Marka silindi";
         public static string ColorAdded = "Renk eklendi";
         public static string ColorUpdated = "Renk güncellendi";
-        public static string ColorDeleted = "Renk silindi";
-        public static string CarNameInvalid = "Araç ismi geçersiz";
-        public static string MeintenanceTime = "Sistem bakımda";
-        public static string CarsListed = "Ürünler listelendi";
-        
-        public static string BrandsListed = "Markalar listelendi";
-        
+        public static string ColorDeleted = "Renk silindi";       
+        public static string CarNameInvalid = "Araç ismi geçersiz";                      
+        public static string CarsListed = "Araçlar listelendi";       
+        public static string BrandsListed = "Markalar listelendi";        
         public static string ColorsListed = "Renkler listelendi";
         public static string UserAdded = "Kullanıcı eklendi";
         public static string UserUpdated = "Kullanıcı güncellendi";
@@ -40,6 +37,7 @@ namespace Business.Constants
         public static string CustomerNameInvalid = "Müşteri ismi geçersiz";
         
         public static string RentalNotAdded = "Araç kiralama için uygun değil";
+        public static string MeintenanceTime = "Sistem bakımda";
 
     }
 }
