@@ -2,7 +2,7 @@
 using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebAPI.Controllers     
+namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -37,8 +37,8 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("add")]
-        public IActionResult Post(Brand brand)
+        [HttpPost("add")]
+        public IActionResult Add(Brand brand)
         {
             var result = _brandService.Add(brand);
             if (result.Success)
@@ -49,5 +49,27 @@ namespace WebAPI.Controllers
 
         }
 
+        [HttpPost("delete")]
+        public IActionResult Delete(Brand brand)
+        {
+            var result = _brandService.Delete(brand);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpPost("update")]
+        public IActionResult Update(Brand brand)
+        {
+            var result = _brandService.Update(brand);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }
