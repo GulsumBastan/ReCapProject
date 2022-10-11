@@ -1,11 +1,11 @@
-﻿using Core.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Core.DataAccess;
 using System.Linq.Expressions;
 using System.Linq;
+using Core.Entities.Abstract;
 
 namespace Core.DataAccess.EntityFramework
 {
