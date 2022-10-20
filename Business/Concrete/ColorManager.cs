@@ -6,9 +6,7 @@ using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Concrete
 {
@@ -24,8 +22,6 @@ namespace Business.Concrete
         [ValidationAspect(typeof(ColorValidator))]
         public IResult Add(Color color)
         {
-            ValidationTool.Validate(new ColorValidator(), color);
-
             _colorDal.Add(color);
             return new SuccessResult(Messages.ColorAdded);
         }

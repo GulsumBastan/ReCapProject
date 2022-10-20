@@ -25,10 +25,19 @@ namespace Business.Concrete
         [ValidationAspect(typeof(RentalValidator))]
         public IResult Add(Rental rental)
         {
-            ValidationTool.Validate(new RentalValidator(), rental);
 
-            _rentalDal.Add(rental);
-            return new SuccessResult(Messages.RentalAdded);
+            var rentalcheck = _rentalDal.Get(r => r.CarId == rental.CarId && r.ReturnDate == null);
+            if (rentalcheck == null)
+            {
+                _rentalDal.Add(rental);
+                return new SuccessResult(Messages.RentalAdded);
+
+            }
+            else
+            {
+                return new ErrorResult(Messages.RentalNotAdded);
+
+            }
         }
 
         public IResult Delete(Rental rental)

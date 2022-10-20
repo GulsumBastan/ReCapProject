@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using Core.DataAccess;
 using System.Linq.Expressions;
 using System.Linq;
 using Core.Entities.Abstract;

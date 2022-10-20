@@ -14,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddCors();
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>
@@ -58,7 +59,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader());
+app.UseCors(builder => builder.WithOrigins("http://localhost:56927").AllowAnyHeader());
 
 app.UseHttpsRedirection();
 

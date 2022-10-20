@@ -25,11 +25,10 @@ namespace Business.Concrete
         [ValidationAspect(typeof(CustomerValidator))]
         public IResult Add(Customer customer)
         {
-            ValidationTool.Validate(new CustomerValidator(), customer);
-
             _customerDal.Add(customer);
             return new SuccessResult(Messages.CustomerAdded);
         }
+
 
         public IResult Delete(Customer customer)
         {
