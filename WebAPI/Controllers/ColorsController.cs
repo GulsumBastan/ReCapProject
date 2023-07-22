@@ -69,5 +69,13 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+        [HttpGet("getbycolorname")]
+        public IActionResult GetByColorName(string name)
+        {
+            var result = _colorService.GetByColorName(name);
+            if (result.Success)
+            { return Ok(result.Data); }
+            return BadRequest(result);
+        }
     }
 }

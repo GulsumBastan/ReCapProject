@@ -10,7 +10,7 @@ namespace Business.Constants
     public class Messages
     {
         public static string CarAdded = "Araç eklendi";
-        public static string CarUpdate = "Araç güncellendi";
+        public static string CarUpdated = "Araç güncellendi";
         public static string CarDeleted = "Araç silindi";
 
         public static string BrandAdded = "Marka eklendi";
@@ -32,6 +32,7 @@ namespace Business.Constants
         public static string RentalAdded = "Kiralama eklendi";
         public static string RentalUpdated = "Kiralama güncellendi";
         public static string RentalDeleted = "Kiralama silindi";
+        
 
         public static string CarNameInvalid = "Araç ismi geçersiz";
         public static string UserNameInvalid = "Kullanıcı ismi geçersiz";
@@ -42,9 +43,9 @@ namespace Business.Constants
         public static string ColorsListed = "Renkler listelendi";
         public static string UsersListed = "Kullanıcılar listelendi"; 
         public static string CustomersListed = "Müşteriler listelendi";
-        public static string RentalsListed = "Kiralamalar listelendi";
-       
-        
+        public static string RentalDetailsListed = "Araç kiralamaları listelendi";
+
+
         public static string RentalNotAdded = "Araç kiralama için uygun değil";
         public static string MeintenanceTime = "Sistem bakımda";
 

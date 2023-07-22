@@ -11,9 +11,6 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfBrandDal : EfEntityRepositoryBase<Brand, RentACarContext>, IBrandDal
     {
-        //public List<CarDetailDto> GetBrandsDetails()
-        //{
-        //    throw new NotImplementedException();
-        //}
+       
     }
 }

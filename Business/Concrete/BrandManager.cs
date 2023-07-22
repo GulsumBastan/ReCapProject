@@ -33,8 +33,10 @@ namespace Business.Concrete
             _brandDal.Delete(brand);
             return new SuccessResult(Messages.BrandDeleted);
         }
+        [ValidationAspect(typeof(BrandValidator))]
         public IResult Update(Brand brand)
         {
+            _brandDal.Update(brand);
             return new SuccessResult(Messages.BrandUpdated);
         }
         public IDataResult<List<Brand>> GetAll()
@@ -43,8 +45,12 @@ namespace Business.Concrete
         }
         public IDataResult <Brand> GetById(int brandId)
         {
-            return new SuccessDataResult<Brand>(_brandDal.Get(b=>b.Id==brandId));
-        }       
-        
+            return new SuccessDataResult<Brand>(_brandDal.Get(b=>b.BrandId==brandId));
+        }
+
+        public IDataResult<Brand> GetByBrandName(string name)
+        {
+            return new SuccessDataResult<Brand>(_brandDal.Get(b => b.BrandName == name));
+        }
     }
 }
