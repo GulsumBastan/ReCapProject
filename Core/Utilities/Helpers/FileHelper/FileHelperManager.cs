@@ -29,7 +29,7 @@ namespace Core.Utilities.Helpers.FileHelper
                     string guid = Guid.NewGuid().ToString();
                     var path = guid + extension;
 
-                    builder.Append(path + ";");
+                    builder.Append(path);
                     using FileStream fileStream = File.Create(root + path);
                     item.CopyTo(fileStream);
                     fileStream.Flush();

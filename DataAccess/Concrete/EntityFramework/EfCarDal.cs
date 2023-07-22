@@ -12,7 +12,6 @@ namespace DataAccess.Concrete.EntityFramework
         public List<CarDetailDto> GetCarDetails(Expression<Func<CarDetailDto, bool>> filter = null)
         {
 
-            var pathUrl = "C:\\Users\\pc\\source\\repos\\ReCapProject\\WebAPI\\wwwroot\\Uploads\\Images\\";
             using (RentACarContext context = new RentACarContext())
             {
                 var result = from c in context.Cars
@@ -30,7 +29,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  ColorName = r.ColorName,
                                  DailyPrice = c.DailyPrice,
                                  Description = c.Description,
-                                 CarImage = pathUrl+ context.CarImages.FirstOrDefault(f=>f.CarId==c.Id).ImagePath ?? pathUrl+"default.png"
+                                 CarImage =  context.CarImages.FirstOrDefault(f=>f.CarId==c.Id).ImagePath ?? "default.png"
                              };
 
 
