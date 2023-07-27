@@ -43,7 +43,7 @@ namespace ConsoleUI
             var brands = brandManager.GetAll();
             foreach (var brand in brands.Data)
             {
-                Console.WriteLine(brand.Id);
+                Console.WriteLine(brand.BrandId);
             }
         }
         private static void ColorTest()
@@ -52,7 +52,7 @@ namespace ConsoleUI
             var colors = colorManager.GetAll();
             foreach (var color in colors.Data)
             {
-                Console.WriteLine(color.Id);
+                Console.WriteLine(color.ColorId);
             }
         }
         private static void CarTest()
@@ -63,7 +63,7 @@ namespace ConsoleUI
 
             foreach (var car in result.Data)
             {
-                Console.WriteLine(car.CarName + " " + car.BrandName + " " + car.ColorName + " " + car.DailyPrice);
+                Console.WriteLine(car.CarId + " " + car.BrandName + " " + car.ColorName + " " + car.DailyPrice);
             }
         }
         private static void CarAdd()
@@ -126,7 +126,7 @@ namespace ConsoleUI
             BrandManager brandManager = new BrandManager(new EfBrandDal());
             var brand = brandManager.GetById(2);
             var data=brand.Data;
-            Console.WriteLine(data.Name);
+            Console.WriteLine(data. BrandName);
         }
         private static void BrandGetAll()
         {
@@ -134,27 +134,27 @@ namespace ConsoleUI
             var result = brandManager.GetAll();
             foreach (var brand in result.Data)
             {
-                Console.WriteLine(brand.Name);
+                Console.WriteLine(brand.BrandName);
             }
         }
         private static void BrandAdd()
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
-            var brand = new Brand { Name = "Mercedes" };
+            var brand = new Brand { BrandName = "Mercedes" };
             var result = brandManager.Add(brand);
             Console.WriteLine(result.Message);
         }
         private static void BrandUpdate()
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
-            var brand = new Brand { Id = 2, Name = "Fiat" };
+            var brand = new Brand { BrandId = 2, BrandName = "Fiat" };
             var result = brandManager.Update(brand);
             Console.WriteLine(result.Message);
         }
         private static void BrandDelete()
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
-            var brand = new Brand { Id = 3 };
+            var brand = new Brand { BrandId = 3 };
             var result = brandManager.Delete(brand);
             Console.WriteLine(result.Message);
         }
@@ -162,7 +162,7 @@ namespace ConsoleUI
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
             var result = colorManager.GetById(2);
-            Console.WriteLine(result.Data.Name);
+            Console.WriteLine(result.Data.ColorName);
         }
         private static void ColorGetAll()
         {
@@ -170,27 +170,27 @@ namespace ConsoleUI
             var result = colorManager.GetAll();
             foreach (var color in result.Data)
             {
-                Console.WriteLine(color.Name);
+                Console.WriteLine(color.ColorName);
             }
         }
         private static void ColorAdd()
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
-            var color = new Color { Name = "Kırmızı" };
+            var color = new Color { ColorName = "Kırmızı" };
             var result = colorManager.Add(color);
             Console.WriteLine(result.Message);
         }
         private static void ColorUpdate()
         {
             ColorManager colormanager = new ColorManager(new EfColorDal());
-            var color = new Color { Id = 1, Name = "Beyaz" };
+            var color = new Color { ColorId = 1, ColorName = "Beyaz" };
             var result = colormanager.Update(color);
             Console.WriteLine(result.Message);
         }
         private static void ColorDelete()
         {
             ColorManager colormanager = new ColorManager(new EfColorDal());
-            var color = new Color { Id = 2 };
+            var color = new Color { ColorId = 2 };
             var result = colormanager.Delete(color);
             Console.WriteLine(result.Message);
         }
